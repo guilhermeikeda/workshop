@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { Page1 } from '../pages/page1/page1';
@@ -10,22 +10,15 @@ import { LoginPage } from '../pages/login/login';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
+  @ViewChild('myNav')
+  nav: Nav;
 
-  rootPage: any = LoginPage;
-
-  pages: Array<{ title: string, component: any }>;
-
+  page1: any;
+  page2: any;
   constructor(public platform: Platform) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Page One', component: Page1 },
-      { title: 'Page Two', component: Page2 },
-      { title: 'Logout', component: null }
-    ];
-
+    this.page1 = Page1;
+    this.page2 = Page2;    
   }
 
   initializeApp() {
@@ -34,14 +27,8 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
-    });
-  }
-
-  openPage(page) {
-    if (page.title == 'Logout') {
+          
       this.nav.setRoot(LoginPage);
-    } else {
-      this.nav.setRoot(page.component);
-    }
+    });
   }
 }

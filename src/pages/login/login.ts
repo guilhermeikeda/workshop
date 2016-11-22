@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, MenuController } from 'ionic-angular';
+import { NavController, Tabs } from 'ionic-angular';
 import { Page1 } from '../page1/page1';
 
 /*
@@ -15,15 +15,22 @@ import { Page1 } from '../page1/page1';
 export class LoginPage {
   formulario: any;
 
-  constructor(public navCtrl: NavController, menu: MenuController) {
+  constructor(public navCtrl: NavController, public tabs: Tabs) {
     this.formulario = {};
-    menu.swipeEnable(false);
+    this.showTabs(false);
   }
 
   entrar() {
     this.navCtrl.setRoot(Page1, {
       usuario: this.formulario
     });
+    this.showTabs(true);
   }
 
+
+  private showTabs(showTabs: boolean) {
+    this.tabs._tabs.forEach((tab) => {
+      tab.show = showTabs;
+    });
+  }
 }

@@ -1,13 +1,11 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Basic Navigation</ion-title>
+    <ion-title>Tabs Navigation</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <h3> Bem-vindo {{usuario.nome}} </h3>
   <button (click)="alterarSenha()" ion-button>Alterar Senha </button>
+  <button (click)="logout()" ion-button> Logout </button>
 </ion-content>
