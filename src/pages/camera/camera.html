@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Camera</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <h3> Olá, tire a sua foto aqui! </h3>
+  <button (click)="tirarFoto()" ion-button>Take a Picture</button>
+  <ion-card *ngIf="base64Image">
+    <ion-card-content>
+      <img [src]="base64Image" />
+    </ion-card-content>
+    <button ion-button color="danger" (click)="apagarFoto()">X</button>
+  </ion-card>
+</ion-content>
