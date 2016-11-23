@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { CameraPage } from '../pages/camera/camera';
-import { Page2 } from '../pages/page2/page2';
+import { GeoLocationPage } from '../pages/geo-location/geo-location';
 
 @NgModule({
   declarations: [
     MyApp,
     CameraPage,
-    Page2
+    GeoLocationPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -17,8 +17,8 @@ import { Page2 } from '../pages/page2/page2';
   entryComponents: [
     MyApp,
     CameraPage,
-    Page2
+    GeoLocationPage
   ],
   providers: []
 })
-export class AppModule {}
+export class AppModule { }

@@ -7,12 +7,16 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>geoLocation</ion-title>
+    <ion-title>Geo Location</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <h3> Geo Location </h3>
+  <button (click)="buscarPosicao()" ion-button>Buscar Localização</button>
+  <p> Latitude: {{latitude}}</p>
+  <p> Longitude: {{longitude}} </p>
+  <p> Endereço: {{endereco}} </p>
 </ion-content>
