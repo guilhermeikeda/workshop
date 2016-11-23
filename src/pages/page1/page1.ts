@@ -4,6 +4,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { AlteraSenhaPage } from '../altera-senha/altera-senha';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'page-page1',
@@ -11,12 +12,14 @@ import { AlteraSenhaPage } from '../altera-senha/altera-senha';
 })
 export class Page1 {
 
-  usuario: any;
+  usuario: User = <User>{};
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
               public storage: Storage) {
-    this.usuario = navParams.get('usuario');    
+    
+    this.storage.get('user').then(user => this.usuario = user);
+
   }
 
   alterarSenha(){

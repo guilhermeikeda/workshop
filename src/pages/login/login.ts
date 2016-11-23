@@ -3,6 +3,8 @@ import { NavController, MenuController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Page1 } from '../page1/page1';
 
+import { User } from '../../models/user';
+
 /*
   Generated class for the Login page.
 
@@ -14,21 +16,23 @@ import { Page1 } from '../page1/page1';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  formulario: any;
+  formulario: User = <User>{};
 
   constructor(public navCtrl: NavController, 
               public menu: MenuController, 
-              public storage: Storage) {
-    this.formulario = {};
+              public storage: Storage) {   
+    
     menu.swipeEnable(false);
   }
 
   entrar() {
-    console.log(this.formulario);
-    this.storage.set('user', this.formulario);
-    this.navCtrl.setRoot(Page1, {
-      usuario: this.formulario
-    });
+    let user: User = <User>this.formulario;
+
+    this.storage
+        .set('user', user)
+        .then(() => {
+          this.navCtrl.setRoot(Page1);
+        });    
   }
 
 }
