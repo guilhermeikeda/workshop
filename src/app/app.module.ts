@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
@@ -25,6 +26,6 @@ import { AlteraSenhaPage } from '../pages/altera-senha/altera-senha';
     LoginPage,
     AlteraSenhaPage
   ],
-  providers: []
+  providers: [ Storage ]
 })
 export class AppModule {}
