@@ -3,11 +3,13 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { CameraPage } from '../pages/camera/camera';
 import { GeoLocationPage } from '../pages/geo-location/geo-location';
+import { HomePage } from '../pages/home/home';
 
 @NgModule({
   declarations: [
     MyApp,
     CameraPage,
+    HomePage,
     GeoLocationPage
   ],
   imports: [
@@ -17,6 +19,7 @@ import { GeoLocationPage } from '../pages/geo-location/geo-location';
   entryComponents: [
     MyApp,
     CameraPage,
+    HomePage,
     GeoLocationPage
   ],
   providers: []

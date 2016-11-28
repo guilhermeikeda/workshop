@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { NavController } from 'ionic-angular';
 import { Geolocation } from 'ionic-native';
-import { GoogleMap, GoogleMapsEvent } from 'ionic-native';
 
 /*
   Generated class for the GeoLocation page.

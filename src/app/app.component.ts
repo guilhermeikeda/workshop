@@ -4,7 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { CameraPage } from '../pages/camera/camera';
 import { GeoLocationPage } from '../pages/geo-location/geo-location';
-
+import { HomePage } from '../pages/home/home';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,15 +12,16 @@ import { GeoLocationPage } from '../pages/geo-location/geo-location';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CameraPage;
+  rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
+      { title: 'Home', component: HomePage },
       { title: 'Camera', component: CameraPage },
       { title: 'GeoLocation', component: GeoLocationPage }
     ];

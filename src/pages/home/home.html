@@ -1,0 +1,33 @@
+<!--
+  Generated template for the Home page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>InstaIonic</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar (ionInput)="buscarTimes($event)" placeholder="Digite o nome do sue time" debounce="1000"></ion-searchbar>
+  {{endereco}}
+
+  <ion-list>
+    <ion-item *ngFor="let time of times">
+      <ion-avatar item-left>
+        <img [src]="time.url_escudo_png">
+      </ion-avatar>
+      <h3> {{time.nome}} </h3>
+    </ion-item>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="default" (click)="tirarFoto()"><ion-icon name="camera"></ion-icon></button>
+  </ion-fab>
+</ion-content>
