@@ -4,13 +4,15 @@ import { MyApp } from './app.component';
 import { CameraPage } from '../pages/camera/camera';
 import { GeoLocationPage } from '../pages/geo-location/geo-location';
 import { HomePage } from '../pages/home/home';
+import { CadastroTimePage } from '../pages/cadastro-time/cadastro-time';
 
 @NgModule({
   declarations: [
     MyApp,
     CameraPage,
     HomePage,
-    GeoLocationPage
+    GeoLocationPage,
+    CadastroTimePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -20,7 +22,8 @@ import { HomePage } from '../pages/home/home';
     MyApp,
     CameraPage,
     HomePage,
-    GeoLocationPage
+    GeoLocationPage,
+    CadastroTimePage
   ],
   providers: []
 })

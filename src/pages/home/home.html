@@ -9,7 +9,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>InstaIonic</ion-title>
+    <ion-title>Ionic Rocks</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,15 +19,56 @@
   <ion-searchbar (ionInput)="buscarTimes($event)" placeholder="Digite o nome do sue time" debounce="1000"></ion-searchbar>
   {{endereco}}
 
-  <ion-list>
-    <ion-item *ngFor="let time of times">
-      <ion-avatar item-left>
-        <img [src]="time.url_escudo_png">
-      </ion-avatar>
-      <h3> {{time.nome}} </h3>
+  <div padding>
+    <ion-segment [(ngModel)]="tipoBusca">
+      <ion-segment-button value="times">
+        Times
+      </ion-segment-button>
+      <ion-segment-button value="ligas">
+        Ligas
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <h2 *ngIf="tipoBusca=='times'">Busca por times </h2>
+  <h2 *ngIf="tipoBusca=='ligas'">Busca por ligas </h2>
+  <ion-list no-lines>
+    <ion-item *ngFor="let time of times; let i = index">
+      <ion-card>
+        <ion-card-header>
+          <h2>{{i + 1}}º {{time.nome}} </h2>
+          <p> {{time.nome_cartola}}</p>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <ion-thumbnail item-left>
+                <img [src]="time.url_escudo_png">
+              </ion-thumbnail>
+            </ion-col>
+            <ion-col text-center center>
+              <h1>{{time.pontuacao}} </h1>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-30>
+              <button ion-button icon-left clear small>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>12 Likes</div>
+            </button>
+            </ion-col>
+            <ion-col width-30>
+              <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <ion-note>4 Comments</ion-note>
+            </button>
+            </ion-col>
+
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
     </ion-item>
   </ion-list>
   <ion-fab right bottom>
-    <button ion-fab color="default" (click)="tirarFoto()"><ion-icon name="camera"></ion-icon></button>
+    <button ion-fab color="default" (click)="cadastrarTime()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 </ion-content>
