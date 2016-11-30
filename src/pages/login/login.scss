@@ -1,3 +1,66 @@
-page-login {
+/* .ios, */ .md {
+    page-login {
+        img {
+            display: none;
+        }
+        /* Background 
+        .scroll-content {
+            background: linear-gradient(color($androidColors, background, base), color($androidColors, background, contrast));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+        */
+        
+        /* Logo 
+        img {
+            display: block;
+            width: 50%;
+            height: auto;
+            margin: 0 auto;
+        }
+        */
 
+        /* Botões 
+        ion-row {
+            align-items: center;
+            text-align: center;
+        }
+        ion-item {
+            border-radius: 30px !important;
+            padding-left: 10px !important;
+            margin-bottom: 10px !important;
+            background-color: #f6f6f6;
+            opacity: 0.7;
+            font-size: 0.9em;
+        }
+        ion-list {
+            margin: 0;
+        }
+        */
+
+        /* Botão de Login 
+        .login-button {
+            width: 60%;
+            border-radius: 30px;
+            font-size: 0.9em;
+            border: 1px solid #fff;
+            background-color: color($androidColors, login);
+        }
+        */
+    }
 }
+
+/* IOS 
+.ios {
+    page-login {
+        .scroll-content {
+            background: linear-gradient(color($iosColors, background, base), color($iosColors, background, contrast));
+        }
+        .login-button {
+            background-color: color($iosColors, login);
+        }
+    }
+}
+*/

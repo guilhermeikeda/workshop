@@ -16,7 +16,7 @@ import { User } from '../../models/user';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  formulario: User = <User>{};
+  formulario: User = { name: "Chapolin", password: "Colorado" };
 
   constructor(public navCtrl: NavController, 
               public menu: MenuController, 
@@ -30,7 +30,7 @@ export class LoginPage {
 
     this.storage
         .set('user', user)
-        .then(() => {
+        .then((user) => {
           this.navCtrl.setRoot(Page1);
         });    
   }

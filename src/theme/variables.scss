@@ -35,6 +35,13 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
+$iosColors: (
+  background: (
+    base: tomato,
+    contrast: white
+  ),
+  login: #ce3f26
+);
 
 
 
@@ -42,6 +49,16 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$androidColors: (
+  background: (
+    base: deepskyblue,
+    contrast: white
+  ),
+  login: (      
+    base: #39acdc,
+    contrast: #ffffff
+  )
+);
 
 
 

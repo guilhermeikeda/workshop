@@ -5,14 +5,35 @@
   Ionic pages and navigation.
 -->
 <ion-content padding>
-  <h3> Login </h3>
-  <ion-item>
-    <ion-label floating>Nome do Usuário</ion-label>
-    <ion-input [(ngModel)]="formulario.nome"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input [(ngModel)]="formulario.password" type="password"></ion-input>
-  </ion-item>
-  <button (click)="entrar()" ion-button> Entrar </button>
+
+  <ion-list inset>
+    <ion-row>
+      <ion-col>
+        <img src="assets/images/login.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+
+        <ion-item>
+          <ion-label>Nome do usuário</ion-label>
+          <ion-input type="text" [(ngModel)]="formulario.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="formulario.password"></ion-input>
+        </ion-item>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button class="login-button" (click)="entrar()">Entrar</button>
+      </ion-col>
+    </ion-row>
+
+  </ion-list>
 </ion-content>
