@@ -1,24 +1,31 @@
 import { Component } from '@angular/core';
 import { NavParams, ViewController, Platform } from 'ionic-angular';
-/*
-  Generated class for the CadastroTime page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-cadastro-time',
   templateUrl: 'cadastro-time.html'
 })
 export class CadastroTimePage {
+  divisao: any;
+  principal: boolean;
+  juniores: boolean;
+  time: any = {};
 
   constructor(public params: NavParams, public viewCtrl: ViewController, public platform: Platform) { }
 
-  ionViewDidLoad() {
-    console.log('Hello CadastroTimePage Page');
+  ionViewWillEnter() {
+    console.log("Will Enter");
+    this.time = {};
   }
 
-  cadastrar(){
-    this.viewCtrl.dismiss();
+  cadastrar() {
+    console.log("Principal: ", this.principal);
+    console.log("Juniores", this.juniores);
+    console.log("Time: ", this.time);
+    this.viewCtrl.dismiss(this.time);
+  }
+
+  divisaoAlterada() {
+    console.log(this.divisao);
   }
 }

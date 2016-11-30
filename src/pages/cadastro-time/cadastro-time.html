@@ -1,9 +1,3 @@
-<!--
-  Generated template for the CadastroTime page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -18,35 +12,36 @@
 
     <ion-item>
       <ion-label fixed>Nome Time</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)]="time.nome"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>Pontuação</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="time.pontuacao"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label>Modo</ion-label>
-      <ion-select [(ngModel)]="gaming" multiple="true" cancelText="Cancelar" okText="Okay!" [selectOptions]="{title: 'Quero Pizza!'}">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
+      <ion-label>Divisão</ion-label>
+      <ion-select [(ngModel)]="divisao" multiple="true" cancelText="Cancelar" okText="Okay!" (ionChange)="divisaoAlterada()">
+        <ion-option value="1">Primeira</ion-option>
+        <ion-option value="2">Segunda</ion-option>
+        <ion-option value="3">Terceira</ion-option>
+        <ion-option value="4">Quarta</ion-option>
+        <ion-option value="5">Quinta</ion-option>
+        <ion-option value="6">Sexta</ion-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
-      <ion-label>Daenerys Targaryen</ion-label>
-      <ion-checkbox color="light" checked="false"></ion-checkbox>
+      <ion-label>Principal</ion-label>
+      <ion-checkbox color="light" checked="false" [(ngModel)]="principal"></ion-checkbox>
     </ion-item>
 
     <ion-item>
-      <ion-label>Daenerys Targaryen</ion-label>
-      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+      <ion-label>Juniores</ion-label>
+      <ion-checkbox color="dark" checked="false" [(ngModel)]="juniores"></ion-checkbox>
     </ion-item>
   </ion-list>
+
   <button ion-button (click)="cadastrar()"> Cadastrar </button>
 </ion-content>

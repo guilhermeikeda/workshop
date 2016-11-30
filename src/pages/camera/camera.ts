@@ -17,11 +17,12 @@ export class CameraPage {
 
   tirarFoto() {
     Camera.getPicture({
-      destinationType: Camera.DestinationType.DATA_URL,
+      destinationType: Camera.DestinationType.FILE_URI,
       targetWidth: 1000,
       targetHeight: 1000
     }).then((imageData) => {
-      this.base64Image = "data:image/jpeg;base64," + imageData;
+      //this.base64Image = "data:image/jpeg;base64," + imageData;
+      this.base64Image = imageData;
     }, (err) => {
       console.log(err);
     });
