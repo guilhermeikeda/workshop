@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Page1 } from '../page1/page1';
 
-/*
-  Generated class for the AlteraSenha page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-altera-senha',
   templateUrl: 'altera-senha.html'
@@ -21,7 +16,16 @@ export class AlteraSenhaPage {
   }
 
   voltar() {
-    this.navCtrl.pop();
+    //this.navCtrl.pop();
+  }
+
+  ionViewWillLeave() {
+    console.log("[ALTERARSENHA] Will Leave");
+    this.navCtrl.setRoot(Page1);
+  }
+
+  ionViewDidLeave() {
+    console.log("[ALTERARSENHA] Did Leave")
   }
 
 }

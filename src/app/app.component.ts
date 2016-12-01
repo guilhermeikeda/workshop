@@ -15,19 +15,20 @@ export class MyApp {
 
   page1: any;
   page2: any;
+
   constructor(public platform: Platform) {
     this.initializeApp();
+
+    // Indica para o componente de Tab qual página deve ser a rootPage de cada tab.
     this.page1 = Page1;
-    this.page2 = Page2;    
+    this.page2 = Page2;
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
-          
+
       this.nav.setRoot(LoginPage);
     });
   }
